@@ -1,5 +1,8 @@
 package utility;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -374,5 +377,23 @@ public class Tester {
                 .sorted(Comparator.comparingDouble(Employee::getSalary).reversed()
                         .thenComparing(Comparator.comparingInt(Employee::getAge)).thenComparing(Employee::getName))
                 .collect(Collectors.toList()));
+    }
+
+    public static void testProblem51() {
+        try {
+            Path path = Paths.get("C:\\Users\\konga\\Documents\\sample.txt");
+            Files.lines(path).forEach(System.out::println);
+        } catch (Exception e) {
+            System.out.println("Exception Occurred");
+        }
+    }
+
+    public static void testProblem52() {
+        try {
+            Path path = Paths.get("C:\\Users\\konga\\Documents\\sample.txt");
+            System.out.println(Files.lines(path).filter(line -> line.matches("^\\d.*$")).collect(Collectors.toList()));
+        } catch (Exception e) {
+            System.out.println("Exception Occurred");
+        }
     }
 }

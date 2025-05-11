@@ -2,8 +2,14 @@ import utility.Tester;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int option = 50;
+        int option = 52;
         switch (option) {
+            case 52:
+                Tester.testProblem52();
+                break;
+            case 51:
+                Tester.testProblem51();
+                break;
             case 50:
                 Tester.testProblem50();
                 break;
